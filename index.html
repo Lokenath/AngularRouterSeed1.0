@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    
+    
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="css/appStyle.css">
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    
+    <script src="js/angular-route.min.js"></script>
+    <script src="router.js"></script>
+    
+    <!-- Jquery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    
+    <!-- Load the controllers -->
+	<script src="mainController.js"></script>
+	
+</head>
+<body ng-app="myApp">
+	
+	<div class="appHomeContainer" layout="column" ng-controller="mainController">
+		<section layout="row" flex>
+		    <md-sidenav class="md-sidenav-left appSideNav" md-component-id="left"
+		                md-disable-backdrop md-whiteframe="4">
+		
+		      <md-toolbar class="md-theme-indigo">
+		        <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+		      </md-toolbar>
+		
+		      <md-content layout-margin>
+		        <p>
+		          This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+		        </p>
+		        <md-button ng-click="toggleLeft()" class="md-accent">
+		          Close this Sidenav
+		        </md-button>
+		      </md-content>
+		    </md-sidenav>
+		    <md-content flex>
+			   <md-toolbar class="md-hue-2">
+			      <div class="md-toolbar-tools">
+			        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
+			          <i class="material-icons">menu</i>
+			        </md-button>
+			
+			        <h2 flex md-truncate>Toolbar with Disabled/Enabled Icon Buttons</h2>
+			
+			        <md-button class="md-icon-button" aria-label="Favorite">
+			          <i class="material-icons">favorite</i>
+			        </md-button>
+			
+			        <md-button class="md-icon-button" aria-label="More">
+			          <i class="material-icons">more_vert</i>
+			        </md-button>
+			      </div>
+			  </md-toolbar>
+		      <div ng-view class="rightContentArea"></div>
+		    </md-content>
+		  </section>
+		
+	</div>
+	
+</body>
+</html>
